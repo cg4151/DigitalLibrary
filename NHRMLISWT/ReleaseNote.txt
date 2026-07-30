@@ -1,0 +1,18 @@
+Do following things before run
+
+1) Change CS ip address in NHRMLISWT.exe.config to your CS's ip
+2) Change RFID Reader ip address in Reader.ini to your reader's ip
+
+Logs will be written in C:/logs/NSBM/NHRMSWT/
+Written Accesion number List CSV file will be written in C:/logs/NSBM/NHRMSWT/WrittenList/
+
+----------------------
+Date: 2019/02/06
+
+1) Book title was added to UI (retrieved from KOHA)
+2) Written List Duplication was removed
+
+IMPORTANT: Reg keys should be installed earlier
+
+
+
