@@ -1,0 +1,30 @@
+[Database]
+# Database connection settings
+# For security: Use environment variables or separate .local.ini files
+# DO NOT commit database credentials to git
+
+Host=localhost
+Port=3306
+Database=nhrmlis_db
+User=admin
+# Password should be set via NHRMLIS_DB_PASSWORD environment variable
+Password=
+
+[Logging]
+# Logging configuration
+LogDirectory=C:\logs\NSBM\NHRMLIS
+LogLevel=Info
+MaxLogFileSizeMB=50
+RetentionDays=30
+
+[Application]
+# General application settings
+AppVersion=1.0.0
+UpdateCheckEnabled=false
+
+[RFID]
+# RFID Reader settings
+# Reader IP should be set via RFID_READER_IP environment variable
+ReaderIP=127.0.0.1
+ReaderPort=3050
+ConnectionTimeout=5000

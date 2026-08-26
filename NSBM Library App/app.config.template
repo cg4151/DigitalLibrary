@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <!-- 
+    CONFIGURATION TEMPLATE
+    
+    This file shows how to reference environment variables in app.config.
+    DO NOT commit app.config with hardcoded IPs/credentials.
+    Instead, use environment variables or create .local.config files.
+    
+    Usage:
+    1. Copy this to app.config.template
+    2. Create app.config for your environment
+    3. Set environment variables before running
+  -->
+  
+  <configSections>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+      <section name="NHRMLIS.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" />
+    </sectionGroup>
+  </configSections>
+  
+  <startup> 
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+  </startup>
+  
+  <appSettings>
+    <!-- Service Configuration -->
+    <!-- These should be set via environment variables -->
+    <!-- Example: set NHRM_SERVICE_BASE_URL=https://your-server/nhrmbase before running -->
+    <add key="ServiceBaseUrl" value="https://10.10.10.24/nhrmbase" />
+    <add key="LogDirectory" value="C:\logs\NSBM\NHRMLIS" />
+  </appSettings>
+  
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBinding_INHRMPayment">
+          <security mode="Transport" />
+        </binding>
+        <binding name="BasicHttpBinding_INHRMBase">
+          <security mode="Transport" />
+        </binding>
+        <binding name="BasicHttpBinding_INHRMUtils">
+          <security mode="Transport" />
+        </binding>
+      </basicHttpBinding>
+    </bindings>
+    <client>
+      <!-- UPDATE THESE ENDPOINTS WITH YOUR SERVER ADDRESS -->
+      <!-- Recommended: Read from NHRM_SERVICE_BASE_URL environment variable -->
+      <endpoint address="https://10.10.10.24/nhrmbase/NHRMPayment.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_INHRMPayment"
+          contract="NHRMPayment.INHRMPayment" name="BasicHttpBinding_INHRMPayment" />
+      <endpoint address="https://10.10.10.24/nhrmbase/NHRMBase.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_INHRMBase"
+          contract="NHRMBase.INHRMBase" name="BasicHttpBinding_INHRMBase" />
+      <endpoint address="https://10.10.10.24/nhrmbase/NHRMUtils.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_INHRMUtils"
+          contract="NHRMUtils.INHRMUtils" name="BasicHttpBinding_INHRMUtils" />
+    </client>
+  </system.serviceModel>
+  
+  <userSettings>
+    <NHRMLIS.Properties.Settings>
+      <setting name="checkbox" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="username" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="password" serializeAs="String">
+        <value />
+      </setting>
+    </NHRMLIS.Properties.Settings>
+  </userSettings>
+  
+  <runtime>
+    <!-- Note: Legacy security policy is deprecated. Consider removing this after upgrading to .NET 4.8+ -->
+    <!-- <NetFx40_LegacySecurityPolicy enabled="true"/> -->
+  </runtime>
+</configuration>

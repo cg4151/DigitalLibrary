@@ -1,0 +1,15 @@
+# RFID Reader Configuration Template
+# 
+# This file configures the NFC/RFID reader connection.
+# DO NOT commit Reader.ini with hardcoded IP addresses.
+# 
+# Setup Instructions:
+# 1. Copy this file to Reader.ini
+# 2. Replace the IP address with your reader's IP
+# 3. Add Reader.ini to .gitignore
+#
+# Environment Variable Support (Coming Soon):
+# You can use: IP=${RFID_READER_IP:127.0.0.1}
+# This will use RFID_READER_IP env var, or 127.0.0.1 as default
+
+IP=127.0.0.1

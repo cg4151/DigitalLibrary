@@ -1,0 +1,8 @@
+# NHRMLISWT - RFID Reader Configuration
+# 
+# Copy this to Reader.ini and update with your reader's IP address.
+# Set RFID_READER_IP environment variable for automated configuration.
+#
+# Format: IP=<reader_ip_address>
+
+IP=127.0.0.1

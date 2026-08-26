@@ -1,0 +1,64 @@
+# Build outputs
+*.exe
+*.dll
+*.pdb
+*.backup
+*.backup.*
+
+# NuGet
+bin/
+obj/
+packages/
+*.nupkg
+*.snupkg
+
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Local environment files (DO NOT COMMIT)
+.env
+.env.local
+*.local.config
+app.config.local
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+*.temp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+*.swp
+*.swo
+*~
+.code-workspace
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Generated files
+*.designer.cs
+*.designer.vb
+
+# INI files with local paths (use environment config instead)
+*.local.ini
+Reader.ini.local
+config.ini.local
